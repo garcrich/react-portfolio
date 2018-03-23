@@ -1,0 +1,30 @@
+{
+  "name": "reactexpress",
+  "version": "1.0.0",
+  "description": "boilerplate for React and Express",
+  "main": "server.js",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && npm run build --prefix client"
+  },
+  "author": "Ricky Garcia",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}
