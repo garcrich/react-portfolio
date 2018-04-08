@@ -1,19 +1,27 @@
 import React, { Component } from "react";
 
 class MobileNav extends Component {
-  render() {
-    const overLayState = this.props.mobileToggle ? (
-      "overlay--active") : (
-        "overlay--hidden"
-      )
+  
+  render() {      
+          var overlayState;
+          var mobileSlideout;
+      
+        if (this.props.mobileToggle === true &&           this.props.mobileView === true) {
+          overlayState =  "overlay--active";
+          mobileSlideout = "mobile-nav--slide-out"
 
-    return (
-      <div>
-        
-        <div className={`overlay ${overLayState}`}></div>
-        <div className={`mobile-nav ${this.props.mobileToggle ? "mobile-nav--slide-out" : ""}`}>
-          <ul className="mobile-nav__list">
-            <span className="mobile-nav__list__item mobile-nav__list__item__close-icon">
+        } else {
+          overlayState = "overlay--hidden";
+          mobileSlideout = "";
+        }
+
+      console.log(this.props.mobileView)
+      return (
+        <div>
+        <div className={`overlay ${overlayState}`}></div>
+        <div className={`mobile-nav ${mobileSlideout}`}>
+        <ul className="mobile-nav__list">
+        <span className="mobile-nav__list__item mobile-nav__list__item__close-icon">
               <span className="mobile-nav__list__item__close-icon--close" onClick={this.props.toggleBtn}>
               <i className="far fa-times-circle"></i>
               </span>
