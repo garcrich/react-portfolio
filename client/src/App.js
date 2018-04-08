@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
-import DesktopNav from './components/navigation/desktopNav'
-import MobileNav from './components/navigation/MobileNav'
+import Nav from './components/navigation/Nav'
+import Home from './components/pages/Home'
 import ErrorPage from './components/pages/ErrorPage'
-import ContactForm from './components/ContactForm'
-import ContactCTA from './components/ContactCTA'
 import Footer from './components/navigation/Footer'
+import './app.css';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <DesktopNav/>
-        <MobileNav/>
-        <ContactForm/>
-        <ContactCTA/>
+        <Nav/>
+        <Home/>
         <ErrorPage/>
         <Footer/>
       </div>

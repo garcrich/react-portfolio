@@ -1,2 +1,5 @@
-@import './styles/index.scss';
-@import './styles/react-base.scss';
+@import './styles/index';
+@import './styles/globals/colors';
+@import './styles/globals/font-styles';
+@import './styles/desktopNav';
+@import './styles/mobileNav'
