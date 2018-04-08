@@ -1,13 +1,13 @@
 import React from 'react';
 
-class ContactCTA extends React.Component {
+class ErrorPage extends React.Component {
     render() {
         return (
             <div>
-                <h1>Call to Action!</h1>
+                <h1>404 error page!</h1>
             </div>
         );
     }
 }
 
-export default ContactCTA;
+export default ErrorPage;
