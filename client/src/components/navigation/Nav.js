@@ -34,7 +34,9 @@ class Nav extends Component {
       return (
         <div>
           <DesktopNav toggleBtn={this.handleClick}/>
-          <MobileNav toggleBtn={this.handleClick} mobileToggle={this.state.mobileToggle} mobileView={this.state.mobileView}/>
+          <MobileNav toggleBtn={this.handleClick}
+                     mobileToggle={this.state.mobileToggle} 
+                     mobileView={this.state.mobileView}/>
         </div>
       );
     }

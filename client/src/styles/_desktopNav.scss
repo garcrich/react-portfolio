@@ -1,44 +1,53 @@
+$nav-height: 55px;
+
 .content-wrapper {
     max-width: 1082px;
     margin: 0 auto;
 }
 
 .nav {
-    height: 75px;
+    height: $nav-height;
     &__list {
+        height: 100%;
         background: $dark-blue;
         padding: 0;
         margin: 0 auto;
         &__section {
 
-            &__mobile-icon {
-                display: none;
-            }
-
+            height: $nav-height;
             display: flex;
             list-style: none;
             align-items: center;
-            height: 70px;
-            ;
             color: white;
             margin: 0 15px 0 0;
             &:first-child {
                 margin-left: 15px;
             }
+
+            &__mobile-icon {
+                display: none;
+            }
+            
+
             text-decoration: none;
-            &--left {
+            &--cta {
                 margin-left: auto;
+                background-color: #126ec3;
+                padding: 0 10px;
             }
             &__item {
-                &__text {}
                 &__img-container {
-                    height: 50px;
+                    height: 40px;
                     padding: 10px 0;
+                    position: relative;
+                    bottom: 2px;
                     &__img {
                         height: 100%;
                         margin-right: 15px;
                     }
                 }
+                
+
             }
         }
     }
@@ -54,20 +63,17 @@
                     display: block;
                     margin-left: auto;
                 }
-
+                
                 &__item {
                     &__img-container {
                         float: right;
-                        &__img {
-                            height: 100%;
-                            margin-right: 8px;
-                        }
+                        bottom: 4px;
                     }
                 }
-
+                
                 &__mobile-icon {
                     display: inline-block;
-                    padding: 22.5px 0;
+                    padding: 15px 0;
                     margin-left: 15px;
                     font-size: 1.5em;
                     cursor: pointer;

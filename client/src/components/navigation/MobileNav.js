@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class MobileNav extends Component {
   
   render() {      
-          var overlayState;
-          var mobileSlideout;
+          let overlayState;
+          let mobileSlideout;
       
         if (this.props.mobileToggle === true &&           this.props.mobileView === true) {
           overlayState =  "overlay--active";

@@ -34,7 +34,7 @@ class DesktopNav extends Component {
             <a className="nav__list__section" href="">
               <li className="nav__list__section__text">YouTube</li>
             </a>
-            <a className="nav__list__section nav__list__section--left" href="">
+            <a className="nav__list__section nav__list__section--cta" href="">
               <li className="nav__list__section__text">Contact</li>
             </a>
           </span>
