@@ -1,5 +1,8 @@
+@import './styles/reset';
 @import './styles/index';
 @import './styles/globals/colors';
 @import './styles/globals/font-styles';
-@import './styles/desktopNav';
-@import './styles/mobileNav'
+@import './styles/globals/rows-and-cols/rows';
+@import './styles/components/nav/desktopNav';
+@import './styles/components/nav/mobileNav';
+@import './styles/components/hero'

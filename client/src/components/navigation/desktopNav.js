@@ -6,9 +6,9 @@ class DesktopNav extends Component {
 
   render() {
     return (
-    <nav className="nav">
+    <nav className="nav ">
       <ul className="nav__list">
-        <div className="content-wrapper">
+        <div className="row-container">
           <span className="nav__list__section">
 
           <span className="nav__list__section__mobile-icon" onClick={this.props.toggleBtn}>

@@ -1,12 +1,11 @@
 $nav-height: 55px;
 
-.content-wrapper {
-    max-width: 1082px;
-    margin: 0 auto;
-}
-
 .nav {
     height: $nav-height;
+    position: fixed;
+    width: 100%;
+    top:0;
+
     &__list {
         height: 100%;
         background: $dark-blue;
@@ -32,7 +31,7 @@ $nav-height: 55px;
             text-decoration: none;
             &--cta {
                 margin-left: auto;
-                background-color: #126ec3;
+                background-color: $blue;
                 padding: 0 10px;
             }
             &__item {
