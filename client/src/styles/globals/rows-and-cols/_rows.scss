@@ -1,8 +1,19 @@
+$mobile-break: 600px;
+
 .full-width-row {
     width: 100%;
+    padding: 70px 0;
 }
 
 .row-container {
     max-width: 1082px;
     margin: 0 auto;
 }
+
+@media only screen and (max-width: 1082px) {
+    .row-container {
+        max-width: 96%;
+        margin: 0 2%;
+    }
+}
+

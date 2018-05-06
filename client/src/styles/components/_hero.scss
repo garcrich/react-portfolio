@@ -1,4 +1,75 @@
+.hero-bg {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url("./images/home-bg.jpg") no-repeat 50% 25%;
+}
 .hero {
-    background-color: red;
     height: 400px;
+    z-index: 1;
+
+    background: url('./images/home-hero-cutout.png') no-repeat 60% 100%;
+
+    &__content {
+        z-index: 2;
+        position: relative;
+        top: 22.5%;
+        left: 52.1%;
+        transform: translate(-52.1%);
+        margin: 0;
+        color: white;
+        &__h1 {
+            font-size: 3.25em;
+            text-transform: uppercase;
+        }
+        &__h2 {
+            font-size: 1.65em;
+            margin: 20px 0 30px;
+            line-height: 1.25em;
+            font-weight: 300;
+        }
+        &__button {
+            border: none;
+            color: white;
+            text-transform: capitalize;
+            border-radius: 3px;
+            font-size: 1em;
+            background-color: $blue;
+            padding: 11px;
+            cursor: pointer;
+            transition: background-color 75ms;
+        }
+        &__button:hover {
+            background-color: darken($blue, 5%);
+            transition: background-color 200ms;
+        }
+    }
+}
+
+@media only screen and (max-width: 1082px) {
+    .hero {
+        &__content {
+            max-width: 96%;
+            margin: 0 2%;
+        }
+    }
+}
+
+@media only screen and (max-width: $mobile-break) {
+
+    .hero-bg {
+        background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.36)), url("./images/home-bg.jpg") no-repeat 50% 25%;
+    }
+    
+    .hero {
+        max-width: 100%;
+        margin: 0;
+        background:     
+        linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+            ),
+            url('./images/home-hero-cutout.png') no-repeat 60% 100%;
+            &__content {
+                margin: 2% 0;
+                text-align: center;
+            }
+        }
 }

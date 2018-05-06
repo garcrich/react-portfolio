@@ -1,0 +1,22 @@
+.cta-bg {
+    background: url("./images/cta-bg.jpg") no-repeat 50% 25%;
+    background-size: cover;
+}
+
+.cta {
+    &__header {
+        margin-bottom: 15px;
+    }
+
+    &__para {
+        max-width: 300px;
+        margin: 0 auto 25px;
+
+    }
+}
+
+@media only screen and (max-width: $mobile-break) {
+    .cta {
+        margin: 0 2.5%;
+    }
+}

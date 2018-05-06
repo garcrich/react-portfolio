@@ -1,0 +1,67 @@
+.home-primary-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), url('./images/primary_skill_bg.jpg') no-repeat center;
+    background-size: cover;
+    height: 100%;
+}
+
+.four-col-primary {
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        color: #fff;
+        text-align: center;
+        justify-content: space-around;
+        margin-bottom: 75px;
+
+        &__item {
+            &__icon {
+                font-size: 3em;
+                margin-bottom: 25px;
+            }
+    
+            &__header {
+                font-weight: bold;
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
+    
+            &__para {
+                max-width: 175px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .four-col-primary {
+        &__container {
+            justify-content: space-between;
+            &__item {
+                width: 50%;
+
+                &:nth-of-type(1), &:nth-of-type(2) {
+                    padding-bottom: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $mobile-break) {
+    .four-col-primary {
+        &__container {
+            margin-bottom: 0;
+            justify-content: space-between;
+            &__item {
+                width: 100%;
+                padding-bottom: 50px;
+            }
+
+            &__button {
+                margin: 0 auto;
+            }
+        }
+    }
+}

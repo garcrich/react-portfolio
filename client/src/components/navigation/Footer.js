@@ -1,18 +1,24 @@
 import React from 'react';
 
 const Footer = () => (
-    <div>
-        <i className="fab fa-youtube"></i>
-        <i className="fab fa-twitter"></i>
-        <i className="fab fa-github"></i>
-        <i className="fab fa-linkedin"></i>
+    <div className="footer">
+        <div className="footer__icons">
+            <a href="" target="_blank"><i className="fab fa-youtube footer__icons__icon"></i></a>
+            <a href="" target="_blank"><i className="fab fa-twitter footer__icons__icon"></i></a>
+            <a href="" target="_blank"><i className="fab fa-github footer__icons__icon"></i></a>
+            <a href="" target="_blank"><i className="fab fa-linkedin footer__icons__icon"></i></a>
+        </div>
 
-        <ul>
-            <li><a href="">skills</a></li>
-            <li><a href="">work history</a></li>
-            <li><a href="">projects</a></li>
-            <li><a href="">YouTube</a></li>
-            <li><a href="">contact</a></li>
+        <ul className="footer__list">
+            <li className="footer__list__item"><a href="" className="footer__list__item__link">skills</a></li>
+            <p className="footer__list__pipe">|</p>
+            <li className="footer__list__item"><a href="" className="footer__list__item__link">work history</a></li>
+            <p className="footer__list__pipe">|</p>
+            <li className="footer__list__item"><a href="" className="footer__list__item__link">projects</a></li>
+            <p className="footer__list__pipe">|</p>
+            <li className="footer__list__item"><a href="" className="footer__list__item__link">YouTube</a></li>
+            <p className="footer__list__pipe">|</p>
+            <li className="footer__list__item"><a href="" className="footer__list__item__link">contact</a></li>
         </ul>
     </div>
 );

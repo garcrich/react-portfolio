@@ -6,7 +6,7 @@ class MobileNav extends Component {
           let overlayState;
           let mobileSlideout;
       
-        if (this.props.mobileToggle === true &&           this.props.mobileView === true) {
+        if (this.props.mobileToggle === true && this.props.mobileView === true) {
           overlayState =  "overlay--active";
           mobileSlideout = "mobile-nav--slide-out"
 
@@ -15,7 +15,6 @@ class MobileNav extends Component {
           mobileSlideout = "";
         }
 
-      console.log(this.props.mobileView)
       return (
         <div>
         <div className={`overlay ${overlayState}`}></div>

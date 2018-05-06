@@ -1,0 +1,45 @@
+.YouTube-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__iframe {
+        width: 350px;
+        height: 195px;
+        margin-bottom: 10px;
+    }
+
+ }
+
+ @media only screen and (max-width: 1088px) {
+    .YouTube-container {
+        justify-content: space-around;
+        &__iframe {
+            width: 380px;
+            height: 215px;
+        }
+    
+     }
+ }
+
+ @media only screen and (max-width: 810px) {
+    .YouTube-container {
+        justify-content: center;
+        &__iframe {
+            width: 450px;
+            height: 251px;
+        }
+    
+     }
+ }
+
+ @media only screen and (max-width: 400px) {
+    .YouTube-container {
+        justify-content: center;
+        &__iframe {
+            width: 300px;
+            height: 167px;
+        }
+    
+     }
+ }

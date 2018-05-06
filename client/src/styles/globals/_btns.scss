@@ -1,0 +1,31 @@
+.btn {
+    display: block;
+    border: none;
+    border-radius: 2px;
+    font-size: 1em;
+    cursor: pointer;
+    padding: .7rem 1.3rem;
+    font-weight: bold;
+
+    &--blue {
+        color: $blue;
+        background-color: #fff;
+        transition: color 200ms, background-color 200ms;
+        &:hover {
+            background-color: #126ec3;
+            color: #fff;
+            transition: color 200ms, background-color 200ms;
+        }
+    }
+
+    &--white {
+        color: #fff;
+        background-color: $blue;
+        transition: background-color 75ms;
+        
+        &:hover {
+            background-color: darken($blue, 5%);
+            transition: background-color 200ms;            
+        }
+    }
+}

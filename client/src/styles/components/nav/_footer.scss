@@ -1,0 +1,49 @@
+.footer {
+    padding: 25px 0;
+    background: $dark-blue-alt;
+    color: #fff;
+    &__icons {
+        :visited {
+            color: #fff;
+        }
+        text-align: center;
+        padding: 25px 0;
+        &__icon {
+            margin: 0 10px;
+            font-size: 1.15em;
+        }
+    }
+    &__list {
+        color: white;
+        
+        :visited {
+            color: white;
+        }
+
+        display: flex;
+        justify-content: center;
+        color: #fff;
+        &__item {
+            margin: 0 10px;
+            text-decoration: none;
+                        &__link {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .footer {
+        &__list {
+            flex-direction: column;
+            align-items: center;
+            &__item {
+                margin: 10px 0;
+            }
+            &__pipe {
+                display: none;
+            }
+        }
+    }
+}
