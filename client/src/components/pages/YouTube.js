@@ -3,8 +3,9 @@ import Hero from '../containers/Hero';
 import PrimaryFourCol from '../containers/PrimaryFourCol';
 import CallToAction from '../containers/CallToAction';
 import axios from 'axios';
+import keys from '../../keys';
 
-const API_KEY = 'AIzaSyC6ftAI3N9JYdmJK4XLfMBGt56JxNeJfHk';
+const API_KEY = process.env.youTubeKey || keys.YoutubeAPI;
 const ChannelID ='UCul78U9NKBYHyqnhQfqUXmg';
 const results = 12;
 
