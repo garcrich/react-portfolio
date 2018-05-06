@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import DesktopNav from './DesktopNav';
+import DskTpNav from './DskTpNav';
 import MobileNav from './MobileNav';
 
 class Nav extends Component {
@@ -33,7 +33,7 @@ class Nav extends Component {
     render() {
       return (
         <div>
-          <DesktopNav toggleBtn={this.handleClick}/>
+          <DskTpNav toggleBtn={this.handleClick}/>
           <MobileNav toggleBtn={this.handleClick}
                      mobileToggle={this.state.mobileToggle} 
                      mobileView={this.state.mobileView}/>
