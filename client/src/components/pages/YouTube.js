@@ -3,9 +3,13 @@ import Hero from '../containers/Hero';
 import PrimaryFourCol from '../containers/PrimaryFourCol';
 import CallToAction from '../containers/CallToAction';
 import axios from 'axios';
+
 import keys from '../../keys';
 
+
+
 const API_KEY = process.env.youTubeKey || keys.YoutubeAPI;
+console.log(API_KEY);
 const ChannelID ='UCul78U9NKBYHyqnhQfqUXmg';
 const results = 12;
 
@@ -28,7 +32,6 @@ class YouTube extends React.Component {
     }
 
     render() {
-
         return (
             <div>
                 <Hero/> 
