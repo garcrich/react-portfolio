@@ -4,7 +4,7 @@ import PrimaryFourCol from '../containers/PrimaryFourCol';
 import CallToAction from '../containers/CallToAction';
 import axios from 'axios';
 
-import keys from '../../keys';
+import keys from '../../config';
 
 
 
