@@ -4,11 +4,9 @@ import PrimaryFourCol from '../containers/PrimaryFourCol';
 import CallToAction from '../containers/CallToAction';
 import axios from 'axios';
 
-import keys from '../../config';
 
 
-
-const API_KEY = process.env.youTubeKey || keys.YoutubeAPI;
+const API_KEY = process.env.youTubeKey || 'AIzaSyC6ftAI3N9JYdmJK4XLfMBGt56JxNeJfHk';
 console.log(API_KEY);
 const ChannelID ='UCul78U9NKBYHyqnhQfqUXmg';
 const results = 12;
