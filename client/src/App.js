@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">      
-        <Router onUpdate={() => window.scrollTo(0, 0)} >
+        <Router>
         <ScrollToTop>
         <Route render={({ location }) => (
           <div>

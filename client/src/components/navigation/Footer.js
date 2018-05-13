@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 const Footer = () => (
     <div className="footer">
         <div className="footer__icons">
-            <a href="" target="_blank"><i className="fab fa-youtube footer__icons__icon"></i></a>
-            <a href="" target="_blank"><i className="fab fa-twitter footer__icons__icon"></i></a>
-            <a href="" target="_blank"><i className="fab fa-github footer__icons__icon"></i></a>
-            <a href="" target="_blank"><i className="fab fa-linkedin footer__icons__icon"></i></a>
+            <a href="http://www.youtube.com/c/RickyGarcia_Learning " target="_blank"><i className="fab fa-youtube footer__icons__icon"></i></a>
+            <a href="https://twitter.com/RickyGarciaDev" target="_blank"><i className="fab fa-twitter footer__icons__icon"></i></a>
+            <a href="https://github.com/garcrich" target="_blank"><i className="fab fa-github footer__icons__icon"></i></a>
+            <a href="https://www.linkedin.com/in/RickyGarciaWebDev" target="_blank"><i className="fab fa-linkedin footer__icons__icon"></i></a>
         </div>
 
         <ul className="footer__list">
