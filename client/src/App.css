@@ -46,6 +46,15 @@ body {
   padding: 0;
   font-family: sans-serif; }
 
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 500ms ease-in; }
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in; }
+
 h1, p, a {
   font-family: proxima-nova, sans-serif; }
 
@@ -121,6 +130,9 @@ h1, p, a {
     max-width: 96%;
     margin: 0 2%; } }
 
+.desktop-nav-active .nav__list__section__text {
+  text-decoration: underline; }
+
 .nav {
   height: 55px;
   z-index: 100;
@@ -142,6 +154,8 @@ h1, p, a {
       margin: 0 22.5px 0 0;
       text-decoration: none;
       font-size: 1em; }
+      .nav__list__section__text {
+        transition: color 200ms ease; }
       .nav__list__section__mobile-icon {
         display: none; }
       .nav__list__section--cta {
@@ -188,6 +202,9 @@ h1, p, a {
     background-color: rgba(0, 0, 0, 0.65);
     z-index: 99;
     transition: background-color 275ms ease; }
+
+.mobile-nav-active {
+  background: #126ec3; }
 
 .mobile-nav {
   z-index: 100;
@@ -452,6 +469,29 @@ h1, p, a {
     .YouTube-container__iframe {
       width: 300px;
       height: 167px; } }
+
+.cta-form--bg {
+  background: url("./images/form-bg.jpg") no-repeat 50% 25%;
+  background-size: cover; }
+
+.cta-form__input, .cta-form__textarea {
+  width: 400px;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 10px; }
+
+.cta-form__input {
+  margin-bottom: 20px;
+  height: 25px; }
+
+.cta-form__textarea {
+  height: 125px;
+  margin-bottom: 30px; }
+
+@media only screen and (max-width: 475px) {
+  .cta-form__input, .cta-form__textarea {
+    width: 90%; } }
 
 .cta-bg {
   background: url("./images/cta-bg.jpg") no-repeat 50% 25%;

@@ -1,13 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Hero from '../containers/Hero';
-import PrimaryFourCol from '../containers/PrimaryFourCol';
 import CallToAction from '../containers/CallToAction';
 import axios from 'axios';
 
 
 
 const API_KEY = process.env.youTubeKey || 'AIzaSyC6ftAI3N9JYdmJK4XLfMBGt56JxNeJfHk';
-console.log(API_KEY);
 const ChannelID ='UCul78U9NKBYHyqnhQfqUXmg';
 const results = 12;
 
@@ -17,6 +15,7 @@ class YouTube extends React.Component {
     state = {
         youtubeList : []
     }
+
     componentWillMount() {
         let that = this;
         axios.get(YTsearchURL)
@@ -30,6 +29,7 @@ class YouTube extends React.Component {
     }
 
     render() {
+        
         return (
             <div>
                 <Hero/> 
@@ -37,7 +37,7 @@ class YouTube extends React.Component {
                     <div className="row-container YouTube-container">
                     {
                         this.state.youtubeList.map((link, i) => {
-                            return <iframe key={`video-${i}`} className="YouTube-container__iframe" src={link} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+                            return <iframe title={`${i}-video`} key={`video-${i}`} className="YouTube-container__iframe" src={link} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
                         })
                     }
                     </div>

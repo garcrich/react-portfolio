@@ -18,6 +18,10 @@
     }
 }
 
+.mobile-nav-active {
+    background: $blue;
+}
+
 .mobile-nav {
     z-index: 100;
     display: block;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from 'react-router-dom';
 import logo from "../../images/logo.png";
 
 
@@ -15,28 +16,28 @@ class DesktopNav extends Component {
               <i className="fas fa-bars"></i>
           </span>
             
-          <a className="nav__list__section__item" href="">
-          
-      
+          <NavLink className="nav__list__section__item" to='/'>      
           <li className="nav__list__section__item__img-container">
           <img className="nav__list__section__item__img-container__img" src={logo} alt=""/>
           </li>
-          </a>
-          <a className="nav__list__section" href="">
-              <li className="nav__list__section__text">Skills</li>
-            </a>
-            <a className="nav__list__section" href="">
+          </NavLink>
+          
+          <NavLink className="nav__list__section" to='/skills' activeClassName="desktop-nav-active">
+            <li className="nav__list__section__text">Skills</li>
+          </NavLink>
+
+            <NavLink className="nav__list__section" to="/work-history" activeClassName="desktop-nav-active">
               <li className="nav__list__section__text">Work History</li>
-            </a>
-            <a className="nav__list__section" href="">
+            </NavLink>
+            <NavLink className="nav__list__section" to="/projects" activeClassName="desktop-nav-active">
               <li className="nav__list__section__text">Projects</li>
-            </a>
-            <a className="nav__list__section" href="">
+            </NavLink>
+            <NavLink className="nav__list__section" to="/youtube" activeClassName="desktop-nav-active">
               <li className="nav__list__section__text">YouTube</li>
-            </a>
-            <a className="nav__list__section nav__list__section--cta" href="">
+            </NavLink>
+            <NavLink className="nav__list__section nav__list__section--cta" to="/contact" activeClassName="desktop-nav-active">
               <li className="nav__list__section__text">Contact</li>
-            </a>
+            </NavLink>
           </span>
         </div>
       </ul>

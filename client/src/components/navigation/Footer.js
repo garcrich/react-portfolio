@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => (
     <div className="footer">
@@ -10,15 +11,15 @@ const Footer = () => (
         </div>
 
         <ul className="footer__list">
-            <li className="footer__list__item"><a href="" className="footer__list__item__link">skills</a></li>
+            <li className="footer__list__item"><NavLink to="skills" className="footer__list__item__link">skills</NavLink></li>
             <p className="footer__list__pipe">|</p>
-            <li className="footer__list__item"><a href="" className="footer__list__item__link">work history</a></li>
+            <li className="footer__list__item"><NavLink to="work-history" className="footer__list__item__link">work history</NavLink></li>
             <p className="footer__list__pipe">|</p>
-            <li className="footer__list__item"><a href="" className="footer__list__item__link">projects</a></li>
+            <li className="footer__list__item"><NavLink to="projects" className="footer__list__item__link">projects</NavLink></li>
             <p className="footer__list__pipe">|</p>
-            <li className="footer__list__item"><a href="" className="footer__list__item__link">YouTube</a></li>
+            <li className="footer__list__item"><NavLink to="youtube" className="footer__list__item__link">YouTube</NavLink></li>
             <p className="footer__list__pipe">|</p>
-            <li className="footer__list__item"><a href="" className="footer__list__item__link">contact</a></li>
+            <li className="footer__list__item"><NavLink to="contact" className="footer__list__item__link">contact</NavLink></li>
         </ul>
     </div>
 );

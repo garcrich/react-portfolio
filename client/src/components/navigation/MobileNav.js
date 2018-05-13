@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from 'react-router-dom';
 
 class MobileNav extends Component {
   
@@ -26,21 +27,21 @@ class MobileNav extends Component {
               </span>
             </span>
 
-            <a className="mobile-nav__list__item" href="">
+            <NavLink onClick={this.props.toggleBtn} className="mobile-nav__list__item" to="/skills" activeClassName="mobile-nav-active">
               <li>Skills</li>
-            </a>
-            <a className="mobile-nav__list__item" href="">
+            </NavLink>
+            <NavLink onClick={this.props.toggleBtn} className="mobile-nav__list__item" to="/work-history" activeClassName="mobile-nav-active">
               <li>Work History</li>
-            </a>
-            <a className="mobile-nav__list__item" href="">
+            </NavLink>
+            <NavLink onClick={this.props.toggleBtn} className="mobile-nav__list__item" to="/projects" activeClassName="mobile-nav-active">
               <li>Projects</li>
-            </a>
-            <a className="mobile-nav__list__item" href="">
+            </NavLink>
+            <NavLink onClick={this.props.toggleBtn} className="mobile-nav__list__item" to="/youtube" activeClassName="mobile-nav-active">
               <li>YouTube</li>
-            </a>
-            <a className="mobile-nav__list__item" href="">
+            </NavLink>
+            <NavLink onClick={this.props.toggleBtn} className="mobile-nav__list__item" to="/contact" activeClassName="mobile-nav-active">
               <li>Contact</li>
-            </a>
+            </NavLink>
           </ul>
         </div>
       </div>

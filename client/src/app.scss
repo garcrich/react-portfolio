@@ -1,6 +1,7 @@
 @import './styles/reset';
 @import './styles/index';
 @import './styles/globals/colors';
+@import './styles/globals/transitions';
 @import './styles/globals/font-styles';
 @import './styles/globals/btns';
 @import './styles/globals/spacers';
@@ -13,4 +14,5 @@
 @import './styles/components/two-col';
 @import './styles/components/col-wrap';
 @import './styles/components/youTube';
+@import './styles/components/cta-form';
 @import './styles/components/cta';

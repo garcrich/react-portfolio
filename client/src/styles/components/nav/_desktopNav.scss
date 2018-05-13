@@ -1,5 +1,10 @@
 $nav-height: 55px;
 
+.desktop-nav-active .nav__list__section__text {
+    text-decoration: underline;
+}
+
+
 .nav {
     height: $nav-height;
     z-index: 100;
@@ -23,6 +28,10 @@ $nav-height: 55px;
             margin: 0 22.5px 0 0;
             text-decoration: none;
             font-size: 1em;
+
+            &__text {
+                transition: color 200ms ease;
+            }
 
             &__mobile-icon {
                 display: none;
