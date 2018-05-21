@@ -11,12 +11,18 @@
 .three-col-wrap {
     margin-top: 50px;
     align-items: baseline;
-    justify-content: space-between;
+    justify-content: flex-start;
     &__item {
+        width: 33.3333%;
         &__inner {
             &__img {
                 width: 100%;
                 padding: 1em 0;
+            }
+            &__icon {
+                font-size: 4.2em;
+                margin-bottom: 25px;
+                color: #126ec3;
             }
         }
     }
@@ -24,7 +30,7 @@
 
 .four-col-wrap {
     justify-content: flex-start;
-    margin-left: -45px;
+    margin-left: -25px;
     &__item {
         width: 25%;
         display: flex;
@@ -50,11 +56,17 @@
 
 @media only screen and (max-width: $mobile-break) {
     .three-col-wrap {
+        justify-content: center;
         flex-direction: column;
         align-items: center;
         &__item {
+            width: 100%;
             margin: 25px 0;
+            &__inner {
+                width: auto;
+            }
         }
+        
     }
     .four-col-wrap {
         margin-left: 0;

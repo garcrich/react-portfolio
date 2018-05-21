@@ -56,7 +56,7 @@ body {
   transition: opacity 500ms ease-in; }
 
 h1, p, a {
-  font-family: proxima-nova, sans-serif; }
+  font-family: 'proxima-nova', sans-serif; }
 
 .para-md-width {
   max-width: 600px; }
@@ -80,7 +80,7 @@ h1, p, a {
 .para {
   color: #126ec3;
   font-size: 1.1em;
-  line-height: 1.1em;
+  line-height: 1.25em;
   margin-bottom: 20px; }
 
 @media only screen and (max-width: 300px) {
@@ -88,7 +88,8 @@ h1, p, a {
     text-align: center; } }
 
 .btn {
-  display: block;
+  display: inline-block;
+  text-decoration: none;
   border: none;
   border-radius: 2px;
   font-size: 1em;
@@ -245,9 +246,9 @@ h1, p, a {
 
 .footer {
   padding: 25px 0;
-  background: #0d2561;
-  color: #fff; }
+  background: #0d2561; }
   .footer__icons {
+    color: #fff;
     text-align: center;
     padding: 25px 0; }
     .footer__icons :visited {
@@ -256,12 +257,12 @@ h1, p, a {
       margin: 0 10px;
       font-size: 1.15em; }
   .footer__list {
-    color: white;
+    color: #fff;
     display: flex;
     justify-content: center;
     color: #fff; }
     .footer__list :visited {
-      color: white; }
+      color: #fff; }
     .footer__list__item {
       margin: 0 10px;
       text-decoration: none; }
@@ -277,13 +278,34 @@ h1, p, a {
     .footer__list__pipe {
       display: none; } }
 
-.hero-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url("./images/home-bg.jpg") no-repeat 50% 25%; }
+.home-hero-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url("./images/backgrounds/home-bg.jpg") no-repeat 50% 25%; }
+  .home-hero-bg--secondary {
+    background: url("./images/backgrounds/home-hero-cutout.png") no-repeat 60% 100%; }
+
+.skills-hero-bg {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("./images/backgrounds/skills-bg.jpg") no-repeat 100% 0%;
+  background-size: cover; }
+
+.work-hist-bg {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url("./images/backgrounds/work-hist-bg.jpg") no-repeat 0% 50%;
+  background-size: cover; }
+
+.projects-bg {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url("./images/backgrounds/projects-bg.jpg") no-repeat 0% 27%;
+  background-size: cover; }
+
+.youtube-bg {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url("./images/backgrounds/youtube-bg.jpg") no-repeat 0% 12.5%;
+  background-size: cover; }
+
+.contact-bg {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url("./images/backgrounds/contact-bg.jpg") no-repeat 0% 15%;
+  background-size: cover; }
 
 .hero {
   height: 400px;
-  z-index: 1;
-  background: url("./images/home-hero-cutout.png") no-repeat 60% 100%; }
+  z-index: 1; }
   .hero__content {
     z-index: 2;
     position: relative;
@@ -303,6 +325,7 @@ h1, p, a {
     .hero__content__button {
       border: none;
       color: white;
+      text-decoration: none;
       text-transform: capitalize;
       border-radius: 3px;
       font-size: 1em;
@@ -314,18 +337,14 @@ h1, p, a {
       background-color: #1061ac;
       transition: background-color 200ms; }
 
-@media only screen and (max-width: 1082px) {
-  .hero__content {
-    max-width: 96%;
-    margin: 0 2%; } }
-
 @media only screen and (max-width: 600px) {
-  .hero-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.36)), url("./images/home-bg.jpg") no-repeat 50% 25%; }
+  .home-hero-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.36)), url("./images/backgrounds/home-bg.jpg") no-repeat 50% 25%; }
+    .home-hero-bg--secondary {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./images/backgrounds/home-hero-cutout.png") no-repeat 60% 100%; }
   .hero {
     max-width: 100%;
-    margin: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./images/home-hero-cutout.png") no-repeat 60% 100%; }
+    margin: 0; }
     .hero__content {
       margin: 2% 0;
       text-align: center; } }
@@ -371,15 +390,26 @@ h1, p, a {
     .four-col-primary__container__button {
       margin: 0 auto; } }
 
+.img-left {
+  order: -1; }
+
+.img-right {
+  order: 0; }
+
 .two-col-container {
   display: flex;
   flex-wrap: wrap; }
   .two-col-container__text-container {
-    order: 0;
     width: calc(50% - 50px);
     margin: 0 25px; }
+    .two-col-container__text-container__para {
+      max-width: 425px; }
   .two-col-container__img-container {
-    width: 50%; }
+    max-width: 50%;
+    max-height: 265.938px;
+    overflow: hidden; }
+    .two-col-container__img-container__img {
+      width: 90%; }
 
 @media only screen and (max-width: 750px) {
   .two-col-container__text-container, .two-col-container__img-container {
@@ -398,14 +428,20 @@ h1, p, a {
 .three-col-wrap {
   margin-top: 50px;
   align-items: baseline;
-  justify-content: space-between; }
-  .three-col-wrap__item__inner__img {
-    width: 100%;
-    padding: 1em 0; }
+  justify-content: flex-start; }
+  .three-col-wrap__item {
+    width: 33.3333%; }
+    .three-col-wrap__item__inner__img {
+      width: 100%;
+      padding: 1em 0; }
+    .three-col-wrap__item__inner__icon {
+      font-size: 4.2em;
+      margin-bottom: 25px;
+      color: #126ec3; }
 
 .four-col-wrap {
   justify-content: flex-start;
-  margin-left: -45px; }
+  margin-left: -25px; }
   .four-col-wrap__item {
     width: 25%;
     display: flex;
@@ -424,10 +460,14 @@ h1, p, a {
 
 @media only screen and (max-width: 600px) {
   .three-col-wrap {
+    justify-content: center;
     flex-direction: column;
     align-items: center; }
     .three-col-wrap__item {
+      width: 100%;
       margin: 25px 0; }
+      .three-col-wrap__item__inner {
+        width: auto; }
   .four-col-wrap {
     margin-left: 0; }
     .four-col-wrap__item {
@@ -501,7 +541,7 @@ h1, p, a {
   margin-bottom: 15px; }
 
 .cta__para {
-  max-width: 300px;
+  max-width: 375px;
   margin: 0 auto 25px; }
 
 @media only screen and (max-width: 600px) {

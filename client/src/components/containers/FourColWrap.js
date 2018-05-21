@@ -1,5 +1,4 @@
 import React from "react";
-import jQueryLogo from "../../images/jQuery-logo.png";
 
 class FourColWrap extends React.Component {
   render() {
@@ -7,17 +6,37 @@ class FourColWrap extends React.Component {
       <div className="full-width-row cta-bg">
         <div className="row-container">
           <div>
-            <h2 className="h1-header h1-header--blue">Frontend</h2>
+            <h2 className="h1-header h1-header--blue">{this.props.header}</h2>
             <p className="para para-md-width">
-              Getting things on the web is hard. Getting them to look great is
-              even harder. A combination of design and technical expertise are
-              both required to get the job done right. I’ve honed my skills to
-              deliver the best experience, where it be on a desktop computer or
-              []pa smartphone. These are my weapons of choice.
+              {this.props.para}
             </p>
           </div>
 
           <div className="four-col-wrap">
+            {
+              this.props.skills && this.props.skills.map((skill, i) => {
+                return (
+                  <div key={i} className="four-col-wrap__item">
+                    <div className="four-col-wrap__item__inner">
+                      {
+                        RegExp('.(gif|jpg|jpeg|tiff|png)$').test(skill.icon) === true ?
+                          <img
+                            className="four-col-wrap__item__inner__jquery-img"
+                            src={skill.icon}
+                            alt={`${skill.text}`}
+                          />
+                          :
+                          <i className={`four-col-wrap__item__inner__icon ${skill.icon}`} />
+                      }
+                      <h3 className="h3-header text-center">{skill.text}</h3>
+                    </div>
+                  </div>
+                )
+              })
+            }
+          </div>
+          {/* <div className="four-col-wrap">
+
             <div className="four-col-wrap__item">
               <div className="four-col-wrap__item__inner">
                 <i className="four-col-wrap__item__inner__icon fab fa-html5" />
@@ -58,7 +77,7 @@ class FourColWrap extends React.Component {
                 <h3 className="h3-header text-center">jQuery</h3>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

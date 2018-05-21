@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class PrimaryFourCol extends React.Component {
+
     render() {
         return (
             <div className="full-width-row home-primary-bg">
@@ -32,8 +34,10 @@ class PrimaryFourCol extends React.Component {
                         </div>
                         
                     </div>
+                    <div className="text-center">
+                        <Link to="/skills" className="btn btn--blue">My Tool Kit</Link>
+                    </div>
                     
-                    <button className="btn btn--blue center-content">My Tool Kit</button>
                 </div>
             </div>
         );

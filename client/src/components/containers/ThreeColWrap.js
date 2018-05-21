@@ -1,7 +1,4 @@
 import React from "react";
-import mongoDBLogo from "../../images/mongoDB-logo.png";
-import nodeJSlogo from "../../images/nodeJS-logo.png";
-import expressLogo from "../../images/Expressjs-logo.png";
 
 class ThreeColWrap extends React.Component {
     render() {
@@ -9,13 +6,36 @@ class ThreeColWrap extends React.Component {
             <div className="full-width-row">
                 <div className="row-container">
                     <div>
-                        <h2 className="h1-header h1-header--blue">Backend</h2>
-                        <p className="para para-md-width">
-                            How do you save data, process a request, or send an email? With backend web development. I’ve created solutions to address these issues using the following tools.</p>
+                        <h2 className="h1-header h1-header--blue">{this.props.header}</h2>
+                        <p className="para para-md-width">{this.props.para}</p>
                     </div>
 
                     <div className="three-col-wrap">
 
+                        {
+                            this.props.skills && this.props.skills.map((skill, i) => {
+                                return (
+                                    <div key={i} className="three-col-wrap__item">
+                                        <div className="three-col-wrap__item__inner">
+                                        {
+                                            RegExp('.(gif|jpg|jpeg|tiff|png)$').test(skill.icon) === true ?
+                                            <img
+                                                className="three-col-wrap__item__inner__img"
+                                                src={skill.icon}
+                                                alt={`${skill.text}`}
+                                            /> : 
+                                            <i 
+                                                className={`three-col-wrap__item__inner__icon ${skill.icon}`} 
+                                            />
+                                        }
+                                        <h3 className="h3-header text-center">{skill.text}</h3>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    {/* <div>
                         <div className="three-col-wrap__item">
                             <div className="three-col-wrap__item__inner">
                                 <img
@@ -46,7 +66,7 @@ class ThreeColWrap extends React.Component {
                                 <h3 className="h3-header text-center">Express</h3>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );

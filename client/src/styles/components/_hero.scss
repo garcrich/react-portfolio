@@ -1,12 +1,39 @@
-.hero-bg {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url("./images/home-bg.jpg") no-repeat 50% 25%;
+$left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0,0,0, .50), rgba(0, 0, 0, 0.25));
+.home-hero-bg {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url("./images/backgrounds/home-bg.jpg") no-repeat 50% 25%;
+    &--secondary {
+        background: url('./images/backgrounds/home-hero-cutout.png') no-repeat 60% 100%;
+    }
 }
+
+.skills-hero-bg {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("./images/backgrounds/skills-bg.jpg") no-repeat 100% 0%;
+    background-size: cover; 
+}
+
+.work-hist-bg {
+    background: $left-to-right-gradient, url("./images/backgrounds/work-hist-bg.jpg") no-repeat 0% 50%;
+    background-size: cover; 
+}
+
+.projects-bg {
+    background: $left-to-right-gradient, url("./images/backgrounds/projects-bg.jpg") no-repeat 0% 27%;
+    background-size: cover; 
+}
+
+.youtube-bg {
+    background: $left-to-right-gradient, url("./images/backgrounds/youtube-bg.jpg") no-repeat 0% 12.5%;
+    background-size: cover; 
+}
+
+.contact-bg {
+    background: $left-to-right-gradient, url("./images/backgrounds/contact-bg.jpg") no-repeat 0% 15%;
+    background-size: cover; 
+}
+
 .hero {
     height: 400px;
     z-index: 1;
-
-    background: url('./images/home-hero-cutout.png') no-repeat 60% 100%;
-
     &__content {
         z-index: 2;
         position: relative;
@@ -28,6 +55,7 @@
         &__button {
             border: none;
             color: white;
+            text-decoration: none;
             text-transform: capitalize;
             border-radius: 3px;
             font-size: 1em;
@@ -46,30 +74,25 @@
 @media only screen and (max-width: 1082px) {
     .hero {
         &__content {
-            max-width: 96%;
-            margin: 0 2%;
+            //max-width: 96%;
+            //margin: 0 2%;
         }
     }
 }
 
 @media only screen and (max-width: $mobile-break) {
-
-    .hero-bg {
-        background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.36)), url("./images/home-bg.jpg") no-repeat 50% 25%;
+    .home-hero-bg {
+        background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.36)), url("./images/backgrounds/home-bg.jpg") no-repeat 50% 25%;
+        &--secondary {
+            background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/backgrounds/home-hero-cutout.png') no-repeat 60% 100%;
+        }
     }
-    
     .hero {
         max-width: 100%;
         margin: 0;
-        background:     
-        linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-            ),
-            url('./images/home-hero-cutout.png') no-repeat 60% 100%;
-            &__content {
-                margin: 2% 0;
-                text-align: center;
-            }
+        &__content {
+            margin: 2% 0;
+            text-align: center;
         }
+    }
 }

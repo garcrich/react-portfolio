@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../containers/Hero'
 
-class ErrorPage extends React.Component {
+export default class ErrorPage extends React.Component {
     render() {
         return (
             <div>
@@ -13,5 +13,3 @@ class ErrorPage extends React.Component {
         );
     }
 }
-
-export default ErrorPage;

@@ -1,8 +1,8 @@
 .footer {
     padding: 25px 0;
     background: $dark-blue-alt;
-    color: #fff;
     &__icons {
+            color: #fff;
         :visited {
             color: #fff;
         }
@@ -14,10 +14,10 @@
         }
     }
     &__list {
-        color: white;
+        color: #fff;
         
         :visited {
-            color: white;
+            color: #fff;
         }
 
         display: flex;
@@ -25,6 +25,7 @@
         color: #fff;
         &__item {
             margin: 0 10px;
+            
             text-decoration: none;
                         &__link {
                 text-decoration: none;

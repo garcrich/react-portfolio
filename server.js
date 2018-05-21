@@ -4,6 +4,10 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 require('./routes/email')(app);
+require('./routes/homePage')(app);
+require('./routes/workHist')(app);
+require('./routes/projects')(app);
+require('./routes/skills')(app);
 
 if (process.env.NODE_ENV === 'production') {
     //Express will serve up production assets
