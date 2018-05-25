@@ -11,9 +11,9 @@ class TwoCol extends React.Component {
 
                         {
                             this.props.para &&
-                                this.props.para.map((paraItem, i) => {
-                                    return <p key={i} className="two-col-container__text-container__para para">{paraItem}</p>
-                                })
+                            this.props.para.map((paraItem, i) => {
+                                return <p key={i} className="two-col-container__text-container__para para">{paraItem}</p>
+                            })
                         }
 
                         {
@@ -31,9 +31,10 @@ class TwoCol extends React.Component {
                             </ul>
                         }
 
-                        {this.props.internalLink ?
-                            <Link to={`/${this.props.link}`} className="btn btn--white">{this.props.btnPara}</Link> :
-                            <a href={`${this.props.link}`} rel="noopener noreferrer" target="_blank" className="btn btn--white">{this.props.btnPara}</a>
+                        {
+                            this.props.internalLink ?
+                                <Link to={`/${this.props.link}`} className="btn btn--white">{this.props.btnPara}</Link> :
+                                <a href={`${this.props.link}`} rel="noopener noreferrer" target="_blank" className="btn btn--white">{this.props.btnPara}</a>
                         }
 
 

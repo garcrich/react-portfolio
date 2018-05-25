@@ -1,4 +1,5 @@
-$left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0,0,0, .50), rgba(0, 0, 0, 0.25));
+$left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .50), rgba(0, 0, 0, 0.25));
+
 .home-hero-bg {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url("./images/backgrounds/home-bg.jpg") no-repeat 50% 25%;
     &--secondary {
@@ -7,28 +8,28 @@ $left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0,0,
 }
 
 .skills-hero-bg {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("./images/backgrounds/skills-bg.jpg") no-repeat 100% 0%;
-    background-size: cover; 
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.15)), url("./images/backgrounds/skills-bg.jpg") no-repeat 0% 60%;
+    background-size: cover;
 }
 
 .work-hist-bg {
     background: $left-to-right-gradient, url("./images/backgrounds/work-hist-bg.jpg") no-repeat 0% 50%;
-    background-size: cover; 
+    background-size: cover;
 }
 
 .projects-bg {
     background: $left-to-right-gradient, url("./images/backgrounds/projects-bg.jpg") no-repeat 0% 27%;
-    background-size: cover; 
+    background-size: cover;
 }
 
 .youtube-bg {
     background: $left-to-right-gradient, url("./images/backgrounds/youtube-bg.jpg") no-repeat 0% 12.5%;
-    background-size: cover; 
+    background-size: cover;
 }
 
 .contact-bg {
     background: $left-to-right-gradient, url("./images/backgrounds/contact-bg.jpg") no-repeat 0% 15%;
-    background-size: cover; 
+    background-size: cover;
 }
 
 .hero {
@@ -40,7 +41,7 @@ $left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0,0,
         top: 22.5%;
         left: 52.1%;
         transform: translate(-52.1%);
-        margin: 0;
+        width: calc(100% - 50px);
         color: white;
         &__h1 {
             font-size: 3.25em;
@@ -48,13 +49,15 @@ $left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0,0,
         }
         &__h2 {
             font-size: 1.65em;
-            margin: 20px 0 30px;
+            margin-top: 15px;
             line-height: 1.25em;
             font-weight: 300;
         }
         &__button {
             border: none;
             color: white;
+            position: relative;
+            top: 35px;
             text-decoration: none;
             text-transform: capitalize;
             border-radius: 3px;
@@ -71,15 +74,6 @@ $left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0,0,
     }
 }
 
-@media only screen and (max-width: 1082px) {
-    .hero {
-        &__content {
-            //max-width: 96%;
-            //margin: 0 2%;
-        }
-    }
-}
-
 @media only screen and (max-width: $mobile-break) {
     .home-hero-bg {
         background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.36)), url("./images/backgrounds/home-bg.jpg") no-repeat 50% 25%;
@@ -92,7 +86,12 @@ $left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0,0,
         margin: 0;
         &__content {
             margin: 2% 0;
-            text-align: center;
+            //text-align: center;
+        }
+        &__content {
+            &__h1 {
+                font-size: 2.75em;
+            }
         }
     }
 }

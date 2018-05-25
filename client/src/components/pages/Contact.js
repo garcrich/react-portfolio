@@ -13,10 +13,14 @@ export default class Contact extends React.Component {
                 <div className="full-width-row cta-form--bg">
                     <div className="row-container">
                         <form className="cta-form">
-                            <input type="text" className="cta-form__input" placeholder="name" />
-                            <input type="text" className="cta-form__input" placeholder="email" />
-                            <input type="text" className="cta-form__input" placeholder="subject" />
-                            <textarea className="cta-form__textarea" placeholder="message" />
+                            <label className="cta-form__label">Name</label>
+                            <input type="text" className="cta-form__input" />
+                            <label className="cta-form__label">Email</label>
+                            <input type="text" className="cta-form__input" />
+                            <label className="cta-form__label">Subject</label>
+                            <input type="text" className="cta-form__input" />
+                            <label className="cta-form__label">Message</label>
+                            <textarea className="cta-form__textarea" />
                             <button className="btn btn--white">
                                 send
                             </button>

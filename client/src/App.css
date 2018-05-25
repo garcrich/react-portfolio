@@ -49,11 +49,11 @@ body {
 .fade-enter {
   opacity: 0;
   z-index: 1;
-  transition: opacity 500ms ease-in; }
+  transition: opacity 700ms ease-in; }
 
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in; }
+  transition: opacity 700ms ease-in; }
 
 h1, p, a {
   font-family: 'proxima-nova', sans-serif; }
@@ -82,6 +82,10 @@ h1, p, a {
   font-size: 1.1em;
   line-height: 1.25em;
   margin-bottom: 20px; }
+
+@media only screen and (max-width: 500px) {
+  .h1-header {
+    font-size: 2.5em; } }
 
 @media only screen and (max-width: 300px) {
   .para, .h1-header {
@@ -284,7 +288,7 @@ h1, p, a {
     background: url("./images/backgrounds/home-hero-cutout.png") no-repeat 60% 100%; }
 
 .skills-hero-bg {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("./images/backgrounds/skills-bg.jpg") no-repeat 100% 0%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.15)), url("./images/backgrounds/skills-bg.jpg") no-repeat 0% 60%;
   background-size: cover; }
 
 .work-hist-bg {
@@ -312,19 +316,21 @@ h1, p, a {
     top: 22.5%;
     left: 52.1%;
     transform: translate(-52.1%);
-    margin: 0;
+    width: calc(100% - 50px);
     color: white; }
     .hero__content__h1 {
       font-size: 3.25em;
       text-transform: uppercase; }
     .hero__content__h2 {
       font-size: 1.65em;
-      margin: 20px 0 30px;
+      margin-top: 15px;
       line-height: 1.25em;
       font-weight: 300; }
     .hero__content__button {
       border: none;
       color: white;
+      position: relative;
+      top: 35px;
       text-decoration: none;
       text-transform: capitalize;
       border-radius: 3px;
@@ -346,8 +352,9 @@ h1, p, a {
     max-width: 100%;
     margin: 0; }
     .hero__content {
-      margin: 2% 0;
-      text-align: center; } }
+      margin: 2% 0; }
+    .hero__content__h1 {
+      font-size: 2.75em; } }
 
 .home-primary-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), url("./images/primary_skill_bg.jpg") no-repeat center;
@@ -414,6 +421,8 @@ h1, p, a {
 @media only screen and (max-width: 750px) {
   .two-col-container__text-container, .two-col-container__img-container {
     width: 100%; }
+  .two-col-container .img-left {
+    order: 0; }
   .two-col-container__img-container {
     margin: 30px auto;
     max-width: 90%; } }
@@ -518,16 +527,27 @@ h1, p, a {
   width: 400px;
   display: block;
   border: none;
-  border-radius: 5px;
-  padding: 2px 10px; }
+  border-radius: 2.5px;
+  padding: 5px 10px;
+  font-family: 'proxima nova';
+  letter-spacing: .25px;
+  font-size: 1em; }
 
 .cta-form__input {
   margin-bottom: 20px;
-  height: 25px; }
+  height: 25px;
+  font-weight: bold; }
 
 .cta-form__textarea {
   height: 125px;
   margin-bottom: 30px; }
+
+.cta-form__label {
+  color: #fff;
+  font-size: 1.1em;
+  text-transform: capitalize;
+  margin-bottom: 7.5px;
+  display: inline-block; }
 
 @media only screen and (max-width: 475px) {
   .cta-form__input, .cta-form__textarea {

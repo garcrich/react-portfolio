@@ -34,6 +34,12 @@ h1, p, a {
     margin-bottom: 20px;
 }
 
+@media only screen and (max-width: 500px) {
+    .h1-header {
+        font-size: 2.5em;
+    }
+}
+
 @media only screen and (max-width: 300px) { 
     
     .para, .h1-header {
