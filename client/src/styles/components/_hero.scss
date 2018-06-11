@@ -2,6 +2,7 @@ $left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0
 
 .home-hero-bg {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url("./images/backgrounds/home-bg.jpg") no-repeat 50% 25%;
+    background-size: cover;
     &--secondary {
         background: url('./images/backgrounds/home-hero-cutout.png') no-repeat 60% 100%;
     }
@@ -28,7 +29,7 @@ $left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0
 }
 
 .contact-bg {
-    background: $left-to-right-gradient, url("./images/backgrounds/contact-bg.jpg") no-repeat 0% 15%;
+    background: $left-to-right-gradient, url("./images/backgrounds/contact-bg.jpg") no-repeat 0% 22.5%;
     background-size: cover;
 }
 
@@ -37,10 +38,12 @@ $left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0
     z-index: 1;
     &__content {
         z-index: 2;
-        position: relative;
-        top: 22.5%;
-        left: 52.1%;
-        transform: translate(-52.1%);
+        // position: relative;
+        // top: 22.5%;
+        // left: 52.1%;
+        // transform: translate(-52.1%);
+        display: inline-block;
+        margin-top: 100px;
         width: calc(100% - 50px);
         color: white;
         &__h1 {
@@ -77,6 +80,7 @@ $left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0
 @media only screen and (max-width: $mobile-break) {
     .home-hero-bg {
         background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.36)), url("./images/backgrounds/home-bg.jpg") no-repeat 50% 25%;
+
         &--secondary {
             background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/backgrounds/home-hero-cutout.png') no-repeat 60% 100%;
         }
@@ -84,11 +88,9 @@ $left-to-right-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0
     .hero {
         max-width: 100%;
         margin: 0;
+        width: 100%;
         &__content {
-            margin: 2% 0;
-            //text-align: center;
-        }
-        &__content {
+            margin-left: 2%;
             &__h1 {
                 font-size: 2.75em;
             }

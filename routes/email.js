@@ -9,27 +9,30 @@ sgMail.setApiKey(process.env.sendGridKey || keys.sendGrid);
 
 module.exports = app => {
     app.post('/send-email', function (req, res) {
+        console.log('axios info', req.body);
         new Email({
-            from: req.body.emailAddress,
-            subjectLine: req.body.subjectLine,
-            body: req.body.emailBody,
-            date: Date()})
-        .save(function (err, doc) {
-            if (err)
-                res.json('<p>Whoops! I\'m sorry, an error happened while sending your message. Please send a message directly to <a href="mailto:rg3646@outlook.com">rg3646@outlook.com</a>');
-            else 
-                res.send('<p>Thanks for reaching out! I\'ll be in touch with you soon!</p>');
+            from: req.body.name,
+            emailAddress: req.body.email,
+            subjectLine: req.body.subject,
+            body: req.body.message,
+            date: Date()
+        })
+            .save(function (err, doc) {
+                if (err)
+                    res.json('<p>Whoops! I\'m sorry, an error happened while sending your message. Please send a message directly to <a href="mailto:rg3646@outlook.com">rg3646@outlook.com</a>');
+                else
+                    res.send('<p>Thanks for reaching out! I\'ll be in touch with you soon!</p>');
             });
 
-            let msg = {
-              to: process.env.emailAddress || keys.emailAddress,
-              from: req.body.emailAddress,
-              subject: req.body.subjectLine,
-              text: req.body.emailBody,
-              html: `<p>${req.body.emailBody}</p>`,
-            };
+        const msg = {
+            to: keys.emailAddress || process.env.emailAddress,
+            from: req.body.email,
+            //emailAddress: req.body.email,
+            subject: req.body.subject,
+            text: req.body.message,
+            html: `<p>${req.body.message}</p>`,
+        };
 
-
-            sgMail.send(msg);
+        sgMail.send(msg);
     });
 }

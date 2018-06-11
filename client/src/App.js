@@ -14,9 +14,6 @@ import './app.css';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-
-
-
 class App extends Component {
 
   render() {
@@ -39,7 +36,9 @@ class App extends Component {
                   <Route exact path='/work-history' component={WorkHistory} />
                   <Route exact path='/projects' component={Projects} />
                   <Route exact path='/youtube' component={YouTube} />
-                  <Route exact path='/contact' component={Contact} />
+                  <Route exact path='/contact' render={(props) => (
+                    <Contact {...props} onSubmit={fields => this.onSubmit(fields)}/>
+                  )}  />
                   <Route component={ErrorPage} />
                   </Switch>
                   </CSSTransition>

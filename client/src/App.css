@@ -283,7 +283,8 @@ h1, p, a {
       display: none; } }
 
 .home-hero-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url("./images/backgrounds/home-bg.jpg") no-repeat 50% 25%; }
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url("./images/backgrounds/home-bg.jpg") no-repeat 50% 25%;
+  background-size: cover; }
   .home-hero-bg--secondary {
     background: url("./images/backgrounds/home-hero-cutout.png") no-repeat 60% 100%; }
 
@@ -304,7 +305,7 @@ h1, p, a {
   background-size: cover; }
 
 .contact-bg {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url("./images/backgrounds/contact-bg.jpg") no-repeat 0% 15%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url("./images/backgrounds/contact-bg.jpg") no-repeat 0% 22.5%;
   background-size: cover; }
 
 .hero {
@@ -312,10 +313,8 @@ h1, p, a {
   z-index: 1; }
   .hero__content {
     z-index: 2;
-    position: relative;
-    top: 22.5%;
-    left: 52.1%;
-    transform: translate(-52.1%);
+    display: inline-block;
+    margin-top: 100px;
     width: calc(100% - 50px);
     color: white; }
     .hero__content__h1 {
@@ -350,11 +349,12 @@ h1, p, a {
       background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./images/backgrounds/home-hero-cutout.png") no-repeat 60% 100%; }
   .hero {
     max-width: 100%;
-    margin: 0; }
+    margin: 0;
+    width: 100%; }
     .hero__content {
-      margin: 2% 0; }
-    .hero__content__h1 {
-      font-size: 2.75em; } }
+      margin-left: 2%; }
+      .hero__content__h1 {
+        font-size: 2.75em; } }
 
 .home-primary-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), url("./images/primary_skill_bg.jpg") no-repeat center;
