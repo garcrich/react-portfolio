@@ -519,6 +519,72 @@ h1, p, a {
       width: 300px;
       height: 167px; } }
 
+.cta-bg {
+  background: url("./images/cta-bg.jpg") no-repeat 50% 25%;
+  background-size: cover; }
+
+.cta__header {
+  margin-bottom: 15px; }
+
+.cta__para {
+  max-width: 375px;
+  margin: 0 auto 25px; }
+
+@media only screen and (max-width: 600px) {
+  .cta {
+    margin: 0 2.5%; } }
+
+.formOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 150ms ease-in-out; }
+
+.ReactModal__Overlay--after-open {
+  opacity: 1; }
+
+.ReactModal__Overlay--before-close {
+  opacity: 0; }
+
+.contactModal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  width: 300px;
+  height: 200px;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 0; }
+
+.modalHeader-container {
+  color: #fff;
+  font-weight: bold;
+  background-color: #298ce9;
+  text-align: center;
+  height: 40px; }
+  .modalHeader-container__text {
+    position: relative;
+    top: 13px;
+    left: 20px; }
+  .modalHeader-container__close-icon {
+    background-color: #126ec3;
+    float: right;
+    cursor: pointer;
+    padding: 12.3px; }
+
+.form-error {
+  color: #ff735b;
+  margin: 5px 0 10px; }
+  .form-error:last-of-type {
+    margin-bottom: 15px; }
+
 .cta-form--bg {
   background: url("./images/form-bg.jpg") no-repeat 50% 25%;
   background-size: cover; }
@@ -534,9 +600,11 @@ h1, p, a {
   font-size: 1em; }
 
 .cta-form__input {
-  margin-bottom: 20px;
+  margin-bottom: 31px;
   height: 25px;
   font-weight: bold; }
+  .cta-form__input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px white inset; }
 
 .cta-form__textarea {
   height: 125px;
@@ -553,17 +621,15 @@ h1, p, a {
   .cta-form__input, .cta-form__textarea {
     width: 90%; } }
 
-.cta-bg {
-  background: url("./images/cta-bg.jpg") no-repeat 50% 25%;
-  background-size: cover; }
-
-.cta__header {
-  margin-bottom: 15px; }
-
-.cta__para {
-  max-width: 375px;
-  margin: 0 auto 25px; }
-
-@media only screen and (max-width: 600px) {
-  .cta {
-    margin: 0 2.5%; } }
+.modal-body {
+  display: block;
+  height: 75px;
+  position: relative;
+  text-align: center;
+  border: none; }
+  .modal-body__text {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.1em;
+    margin-top: 60px;
+    padding: 0 10px; }

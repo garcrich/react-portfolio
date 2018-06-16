@@ -1,0 +1,133 @@
+
+
+.formOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.6);
+  }
+
+.ReactModal__Overlay {
+opacity: 0;
+transition: opacity 150ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+opacity: 0;
+}
+
+.contactModal {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    width: 300px;
+    height: 200px;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+}
+
+.modalHeader-container {
+    color: #fff;
+    font-weight: bold;
+    background-color: #298ce9; 
+    text-align: center;
+    height: 40px;
+
+    &__text {
+        position: relative;
+        top: 13px;
+        left: 20px;
+    }
+
+    &__close-icon {
+        background-color: #126ec3;
+        float: right;
+        cursor: pointer;
+        padding: 12.3px;
+    }
+}
+
+.form-error {
+    color: rgb(255, 115, 91);
+    margin: 5px 0 10px;
+
+    &:last-of-type {
+        margin-bottom: 15px;
+    }
+}
+
+.cta-form {
+
+    &--bg {
+        background: url("./images/form-bg.jpg") no-repeat 50% 25%;
+        background-size: cover;
+    }
+    
+    &__input, &__textarea {
+        width: 400px;
+        display: block;
+        border: none;
+        border-radius: 2.5px;
+        padding: 5px 10px;
+        font-family: 'proxima nova';
+        letter-spacing: .25px;
+        font-size: 1em;
+    }
+    
+    
+    &__input {
+        margin-bottom: 31px;
+        height: 25px;
+        font-weight: bold;
+        &:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 100px white inset;
+        }
+    }
+
+    &__textarea {
+        height: 125px;
+        margin-bottom: 30px;
+    }
+
+    &__label {
+        color: #fff;
+        font-size: 1.1em;
+        text-transform: capitalize;
+        margin-bottom: 7.5px;
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    .cta-form {
+        &__input, &__textarea {
+            width: 90%;
+        }
+    }
+}
+
+
+.modal-body {
+    
+    display: block;
+    height: 75px;
+    position: relative;
+    text-align: center;
+    border:  none;
+
+    &__text {
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.1em;
+        margin-top: 60px;
+        padding: 0 10px;
+    }
+}

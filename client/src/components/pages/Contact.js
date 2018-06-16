@@ -1,6 +1,28 @@
 import React from 'react';
 import Hero from '../containers/Hero';
 import axios from 'axios';
+import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
+
+Modal.setAppElement('div');
+
+const customStyles = {
+    content: {
+        top: 'calc(50% + 27.5px)',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        width: '35%',
+        minWidth: '250px',
+        height: '25%',
+        minHeight: '250px',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        padding: "0",
+        borderRadius: "3px",
+        border: "none"
+    }
+};
 
 export default class Contact extends React.Component {
     state = {
@@ -13,10 +35,10 @@ export default class Contact extends React.Component {
         message: '',
         messageError: '',
 
-        resData: undefined
-    }
+        resData: '',
 
-    //const {name, email, subject, message } = this.state;
+        modalIsOpen: false
+    }
 
     change = (e) => {
         this.setState({
@@ -24,10 +46,16 @@ export default class Contact extends React.Component {
         })
     }
 
+    closeModal = () => {
+        this.setState({
+            modalIsOpen: false
+        });
+    }
+
     onSubmit = (e) => {
         e.preventDefault();
 
-        if(this.state.name === '') {
+        if (this.state.name === '') {
             this.setState({
                 nameError: 'Please provide your name'
             })
@@ -37,21 +65,21 @@ export default class Contact extends React.Component {
             })
         }
 
-        if(this.state.email === '') {
+        if (this.state.email === '') {
             this.setState({
                 emailError: 'Please provide an email address'
             })
-        } else if (this.state.email === /^((?!@).)*$/ || this.state.email.indexOf('.') === -1 ) {
+        } else if (this.state.email === /^((?!@).)*$/ || this.state.email.indexOf('.') === -1) {
             this.setState({
                 emailError: 'Please provide a valid email address'
             })
         } else {
             this.setState({
                 emailError: ''
-            })    
+            })
         }
 
-        if(this.state.subject === '') {
+        if (this.state.subject === '') {
             this.setState({
                 subjectError: 'Please provide a subject message'
             });
@@ -72,39 +100,50 @@ export default class Contact extends React.Component {
         }
 
         setTimeout(() => {
-            if(this.state.nameError === '' && this.state.emailError === '' && this.state.subjectError === '' && this.state.messageError === '') {
+            if (this.state.nameError === '' && this.state.emailError === '' && this.state.subjectError === '' && this.state.messageError === '') {
                 axios.post('/send-email', {
                     name: this.state.name,
                     email: this.state.email,
                     subject: this.state.subject,
                     message: this.state.message
                 }, {
-                    headers: {
-                        'content-type': 'application/json',
-                    },
-                })
-                .then(response => {
-                    this.setState({
-                        resData: response
+                        headers: {
+                            'content-type': 'application/json',
+                        },
                     })
-                    this.state.resData && console.log(this.state.resData.data);
-                })
-                .catch(function (error) {
-                    console.log(error.response);
-                })
+                    .then(response => {
+                        this.setState({
+                            resData: response.data
+                        });
+
+                        this.setState({
+                            modalIsOpen: true
+                        });
+
+                        this.setState({
+                            name: '',
+                            email: '',
+                            subject: '',
+                            message: '',
+                        })
+
+                    })
+                    .catch(function (error) {
+                        console.log(error.response);
+                    })
             } else {
-                console.log('well shoot');
+                this.setState({
+                    resData: 'Oops! Something went wrong!'
+                });
             }
-
         }, 10);
-
 
     }
 
-    
+
     render() {
         return (
-            <div>
+            <div id="contactForm">
                 <Hero
                     header="Let's Get In Touch"
                     subHeader="Tell me about yourself and what I can do for you."
@@ -121,18 +160,20 @@ export default class Contact extends React.Component {
                                 type="text"
                                 className="cta-form__input"
                                 id="name"
-                            /> 
-                            <p>{this.state.nameError}</p>
+                                style={{ margin: `${this.state.nameError.length > 0 ? "0" : ''}` }}
+                            />
+                            <p className="form-error">{this.state.nameError}</p>
                             <label className="cta-form__label" htmlFor="email">Email</label>
                             <input
                                 name="email"
                                 value={this.state.email}
                                 onChange={e => this.change(e)}
-                                type="email"
+                                type="text"
                                 className="cta-form__input"
                                 id="email"
+                                style={{ margin: `${this.state.emailError.length > 0 ? "0" : ''}` }}
                             />
-                            <p>{this.state.emailError}</p>
+                            <p className="form-error">{this.state.emailError}</p>
                             <label className="cta-form__label" htmlFor="subject">Subject</label>
                             <input
                                 name="subject"
@@ -141,8 +182,9 @@ export default class Contact extends React.Component {
                                 type="text"
                                 className="cta-form__input"
                                 id="subject"
+                                style={{ margin: `${this.state.subjectError.length > 0 ? "0" : ''}` }}
                             />
-                            <p>{this.state.subjectError}</p>
+                            <p className="form-error">{this.state.subjectError}</p>
                             <label className="cta-form__label" htmlFor="message">Message</label>
                             <textarea
                                 name="message"
@@ -150,8 +192,9 @@ export default class Contact extends React.Component {
                                 value={this.state.message}
                                 className="cta-form__textarea"
                                 id="message"
+                                style={{ margin: `${this.state.messageError.length > 0 ? "0" : ''}` }}
                             />
-                            <p>{this.state.messageError}</p>
+                            <p className="form-error">{this.state.messageError}</p>
                             <button
                                 className="btn btn--white"
                                 onClick={e => this.onSubmit(e)}
@@ -161,6 +204,32 @@ export default class Contact extends React.Component {
                         </form>
                     </div>
                 </div>
+
+                <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onAfterOpen={this.afterOpenModal}
+                    onRequestClose={this.closeModal}
+                    contentLabel="Example Modal"
+                    style={customStyles}
+                    closeTimeoutMS={150}
+                    overlayClassName="formOverlay"
+                >
+                    <div className="modalHeader-container">
+                        <span className="modalHeader-container__text">Your message was sent!</span>
+                        <i className="fa fa-times modalHeader-container__close-icon" aria-hidden="true" onClick={this.closeModal}></i>
+
+                    </div>
+
+                    <div className="modal-body">
+                        <p className="modal-body__text">{this.state.resData}</p>
+                        <p>I'll be in touch with you soon.</p>
+                    </div>
+
+                    <button className="btn btn--white" style={{
+                        textAlign: "center", margin: "10px auto",
+                        display: "block"
+                    }} onClick={this.closeModal}>Close</button>
+                </Modal>
             </div>
         );
     }
