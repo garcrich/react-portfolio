@@ -21,7 +21,7 @@ export default class ErrorPage extends React.Component {
                         <h2 className="error-div__header text-center ">404</h2>
                         <h2 className="error-div__sub-header text-center ">Oh no! Page not found.</h2>
                         <Link to={`/`} className="text-center hero__content__button" onClick={this.displayNone}>
-                        <button className="btn btn--white center-content">
+                        <button>
                         Return to Home
                         </button>
                         </Link>
