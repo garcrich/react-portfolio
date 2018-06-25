@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const { check,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
 
-mongoose.connect(process.env.mongoURI);
+mongoose.connect(process.env.mongoURI || keys.mongoURI);
 require('../models/email');
 const Email = mongoose.model('emails');
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.sendGridKey);
+sgMail.setApiKey(process.env.sendGridKey || keys.sendGrid);
 
 
 module.exports = app => {
@@ -40,7 +40,7 @@ module.exports = app => {
         });
 
         const msg = {
-            to: process.env.emailAddress,
+            to: keys.emailAddress || process.env.emailAddress,
             from: req.body.email,
             emailAddress: req.body.email,
             subject: req.body.subject,
