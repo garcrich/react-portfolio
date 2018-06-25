@@ -519,6 +519,34 @@ h1, p, a {
       width: 300px;
       height: 167px; } }
 
+.error-primary-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), url("./images/primary_skill_bg.jpg") no-repeat center;
+  background-size: cover;
+  height: calc(100vh - 249px); }
+
+.error-div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -120%);
+  width: 500px;
+  text-align: center; }
+  .error-div__header {
+    color: #fff;
+    font-size: 4.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase; }
+  .error-div__sub-header {
+    color: #fff;
+    font-size: 1.5em; }
+
+@media only screen and (max-width: 600px) {
+  .error-div__header {
+    font-size: 4.2em;
+    margin-bottom: 10px; }
+  .error-div__sub-header {
+    font-size: 1.1em; } }
+
 .cta-bg {
   background: url("./images/cta-bg.jpg") no-repeat 50% 25%;
   background-size: cover; }

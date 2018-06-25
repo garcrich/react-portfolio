@@ -1,0 +1,37 @@
+.error-primary-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), url('./images/primary_skill_bg.jpg') no-repeat center;
+    background-size: cover;
+    height: calc(100vh - 249px);
+}
+
+.error-div {
+    position: fixed;
+    ///z-index: -100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -120%);
+    width: 500px;
+    text-align: center;
+    &__header {
+        color: #fff;
+        font-size: 4.5em;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    &__sub-header {
+        color: #fff;
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: $mobile-break) {
+    .error-div {
+        &__header {
+            font-size: 4.2em;
+            margin-bottom: 10px;
+        }
+        &__sub-header {
+            font-size: 1.1em;
+        }
+    }
+}
