@@ -15,7 +15,7 @@ module.exports = [{
         `CSS and JS were transferred over to the HubSpot portal to match the theme of the website.`
     ],
 
-    img: `images/rsi_history.jpg`,
+    img: `images/rsi_hist.jpg`,
     pullImg: 'img-right',
     altText: `RS&I history page`,
     btnPara: `See Site`,
