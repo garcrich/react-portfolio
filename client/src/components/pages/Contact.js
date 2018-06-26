@@ -100,7 +100,7 @@ export default class Contact extends React.Component {
 
         setTimeout(() => {
             if (this.state.nameError === '' && this.state.emailError === '' && this.state.subjectError === '' && this.state.messageError === '') {
-                axios.post('/send-email', {
+                axios.post(process.env.baseURL + '/send-email', {
                     name: this.state.name,
                     email: this.state.email,
                     subject: this.state.subject,
