@@ -7,7 +7,7 @@ mongoose.connect(process.env.mongoURI);
 require('../models/email');
 const Email = mongoose.model('emails');
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.sendGridKey);
+sgMail.setApiKey(process.env.sendGrid);
 
 
 module.exports = app => {
