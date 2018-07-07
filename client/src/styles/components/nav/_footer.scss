@@ -2,7 +2,7 @@
     padding: 25px 0;
     background: $dark-blue-alt;
     &__icons {
-            color: #fff;
+        color: #fff;
         :visited {
             color: #fff;
         }
@@ -11,24 +11,29 @@
         &__icon {
             margin: 0 10px;
             font-size: 1.15em;
+            color: #fff;
+            :visited {
+                color: #fff;
+            }
         }
     }
     &__list {
         color: #fff;
-        
         :visited {
             color: #fff;
         }
-
         display: flex;
         justify-content: center;
         color: #fff;
         &__item {
             margin: 0 10px;
-            
             text-decoration: none;
-                        &__link {
+            &__link {
                 text-decoration: none;
+                color: white;
+                :visited {
+                    color: #fff;
+                }
             }
         }
     }

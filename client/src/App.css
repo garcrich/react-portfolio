@@ -259,7 +259,10 @@ h1, p, a {
       color: #fff; }
     .footer__icons__icon {
       margin: 0 10px;
-      font-size: 1.15em; }
+      font-size: 1.15em;
+      color: #fff; }
+      .footer__icons__icon :visited {
+        color: #fff; }
   .footer__list {
     color: #fff;
     display: flex;
@@ -271,7 +274,10 @@ h1, p, a {
       margin: 0 10px;
       text-decoration: none; }
       .footer__list__item__link {
-        text-decoration: none; }
+        text-decoration: none;
+        color: white; }
+        .footer__list__item__link :visited {
+          color: #fff; }
 
 @media only screen and (max-width: 500px) {
   .footer__list {
